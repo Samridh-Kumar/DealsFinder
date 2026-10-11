@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover curated health supplement deals on DealsFinder, featuring protein powders, fermented yeast protein, and lab-tested supplements at BBD prices.">
+  <title>Health & Supplements - DealsFinder</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-content">
+      <a href="/" class="logo">
+        <i class="fas fa-tags"></i> DealsFinder
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+        <a href="fashion.html" class="nav-link"><i class="fas fa-tshirt"></i> Fashion</a>
+        <a href="health.html" class="nav-link" aria-current="page"><i class="fas fa-heartbeat"></i> Health</a>
+        <a href="#" class="nav-link"><i class="fas fa-star"></i> Top Deals</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="text-align:center; padding: 4rem 1rem; background: url('images/Health.jpg') center/cover no-repeat; color: white; border-radius: 10px; margin: 2rem; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);">
+    <h1 style="font-size: 3rem; margin-bottom: 0.5rem; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);">Health & Supplements</h1>
+    <p style="font-size: 1.3rem; color: #FFFFFF; font-weight: bold; text-shadow: 2px 2px 5px #B8A07E; max-width: 700px; margin-left: auto; margin-right: auto;">Curated BBD deals on premium protein powders & fermented yeast supplements — lab tested, Trustified verified.</p>
+  </section>
+
+  <main class="main-content">
+    <section class="supplements-section" style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
+      <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+        <h2>🔥 BBD Steals — Health & Supplements</h2>
+        <p>Hand-picked fermented yeast protein isolates & premium powders. All products are <strong>Trustified / Lab Tested</strong> for purity.</p>
+      </div>
+      <!-- Grid Container -->
+      <div class="supplements-grid" id="supplements-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About DealsFinder</h3>
+        <p>Your go-to platform for the latest and greatest deals on fashion and health products.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fashion.html">Fashion Deals</a></li>
+          <li><a href="health.html">Health & Supplements</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const naviLink = "https://r.navi.com/m5mT9C";
+    const bhimLink = "https://bhim.onelink.me/CoHB/juekvu5l";
+    
+    const supplements = [
+      {
+        id: 1,
+        name: "Horlicks Protein Powder",
+        description: "Unflavoured Fermented Yeast Isolate Whey — 24g Protein, 4g Fibre per serve",
+        imageStatic: "images/Horlick_Protein_Plain.webp",
+        imageGif: "images/Horlicks_Protein.gif",
+        status: "None",
+        links: {
+          amazon: null,
+          flipkart: "https://www.flipkart.com/horlicks-protein-powder-unflavoured-fermented-yeast-isolate-whey-24-g-protein-4-fibre/p/itma8570892025c5?pid=PSLHQ779FNQHTTUQ&lid=LSTPSLHQ779FNQHTTUQFCETUX&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6InBwIiwibWlkIjoiZmFjdEJhc2VkUmVjb21tZW5kYXRpb24vcmVjZW50bHlWaWV3ZWQifQ%3D%3D&pageUID=1791464619576"
+        }
+      },
+      {
+        id: 2,
+        name: "SuperYou Protein Vanilla",
+        description: "Fermented Yeast Protein — 26g Protein, Plant-Based, Heat Stable, Gut Friendly",
+        imageStatic: "images/SuperYou_Protein.jpg",
+        imageGif: "images/SuperYou_Protein.gif",
+        status: "Trustified",
+        links: {
+          amazon: "https://www.amazon.in/Superyou-Fermented-Protein-Heat-Stable-Friendly/dp/B0FLDZD6BW?th=1",
+          flipkart: null
+        }
+      },
+      {
+        id: 3,
+        name: "FUELONE Bio-fermented Yeast Protein Isolate",
+        description: "Cold Coffee Flavour — 26g Protein per serve, 1kg (2.2lbs)",
+        imageStatic: "images/FuelOne_Yeast_Protein_26g.jpg",
+        imageGif: "images/Fuel_One_Yeast_Protein.gif",
+        status: "Brand Tested",
+        links: {
+          amazon: "https://www.amazon.in/FUELONE-Protein-Powder-Coffee-2-2lbs/dp/B0G1SYZMVZ/ref=pd_rhf_dp_s_pd_sbs_rvi_d_sccl_2_10/262-6724072-2260020?pd_rd_w=sbh7X&content-id=amzn1.sym.ed04a9b6-f1e8-467f-8e81-e050db1b5151&pf_rd_p=ed04a9b6-f1e8-467f-8e81-e050db1b5151&pf_rd_r=ER9GAK5M0P2J9Q8YH7DV&pd_rd_wg=ETMco&pd_rd_r=9177673b-fd63-4660-bb21-0894d9d4fc1f&pd_rd_i=B0G1SYZMVZ&th=1",
+          flipkart: null
+        }
+      },
+      {
+        id: 4,
+        name: "YogaBar Yeast Protein Chocolate",
+        description: "Fermented Yeast Protein Powder — 26g Protein, Complete Supplement, PDCAAS Certified",
+        imageStatic: "images/yeast-protein-fermented-yeast-protein-powder-26g-protein.webp",
+        imageGif: "images/yeast-protein-fermented-yeast-protein-powder-26g-protein.gif",
+        status: "Brand Tested",
+        links: {
+          amazon: null,
+          flipkart: "https://www.flipkart.com/yogabar-fermented-yeast-protein-powder-26g-protein-complete-supplement-pdcass-1/p/itm48f34fb45df62?pid=PSLHZZ8JZ3XVKZWG&lid=LSTPSLHZZ8JZ3XVKZWGWQRNW8&hl_lid=&marketplace=FLIPKART&fm=eyJ3dHAiOiJyZWNvIiwicHJwdCI6InBwIiwibWlkIjoiZmFjdEJhc2VkUmVjb21tZW5kYXRpb24vcmVjZW50bHlWaWV3ZWQifQ%3D%3D&pageUID=1791464892869"
+        }
+      },
+      {
+        id: 5,
+        name: "Naturaltein YES Protein 26g",
+        description: "Fermented Naturally Sweetened Digestive Protein — 1kg",
+        imageStatic: "images/Yes_Protein_Naturaltein.jpg",
+        imageGif: "images/Yes_Protein_Naturaltein.gif",
+        status: "Trustified",
+        links: {
+          amazon: "https://www.amazon.in/Naturaltein-Fermented-Naturally-Sweetened-Digestive/dp/B0GS9FM26X/ref=sr_1_4?crid=1QUHZ8OLUY6A4&dib=eyJ2IjoiMSJ9.hcMJ4xs2XcRHo9H5o8zp17r8oe03P99vOMHwED0VmcQ9ebU7_XEBjQL8gfYWO3rkgT-O9wmjennUWwfQGFhgFl0GWSr2m9Jq-o2rtNxaE2952Ujb8rjuytb8sbckL497ckuTq776-uFNwYdB7P3xmOHmCrgmF_ZyKs7YYHZOnMqM_b7VYWInfky7ivtSOwNrrsBYHApi2mgaFLZxmewr2lXAhRGuJud8weI2NcnawwmfP3Xq_u3L3CitVlY2nu9mHKcY8obvedw1miM-bG926rA6eILDJzkYD5A4W9Y0VsA.D0RTYAzxRF8HOLdsAD9-1e6nhbhHYgJk1DKA2fH4tA8&dib_tag=se&keywords=Naturaltein+YES+Protein+1kg&qid=1791473184&s=hpc&sprefix=naturaltein+yes+protein+1kg%2Chpc%2C270&sr=1-4",
+          flipkart: "https://www.flipkart.com/naturaltein-fermented-yeast-protein-powder-25g-per-scoop-vegan-plant-plant-based/p/itm8b84daa191224?pid=PSLHQ5R2Z6YHTQKM&marketplace=FLIPKART&lid=LSTPSLHQ5R2Z6YHTQKMOXU7LM&q=naturaltein+whey+protein&fm=search-autosuggest&pageUID=1791489617945"
+        }
+      }
+    ];
+
+    function renderSupplements() {
+      const grid = document.getElementById('supplements-grid');
+      if (!grid) return;
+
+      grid.innerHTML = supplements.map(supp => {
+        let trustBadge = '';
+        if (supp.status === 'Trustified') {
+          trustBadge = `<div style="position:absolute; top:10px; right:10px; background:#e6f4ea; color:#1e8e3e; padding:4px 8px; border-radius:4px; font-weight:bold; font-size:0.8rem; z-index:10;">✅ Trustified / Lab Tested</div>`;
+        } else if (supp.status === 'Brand Tested') {
+          trustBadge = `<div style="position:absolute; top:10px; right:10px; background:#e8f0fe; color:#1a73e8; padding:4px 8px; border-radius:4px; font-weight:bold; font-size:0.8rem; z-index:10;">🛡️ Brand Lab Tested</div>`;
+        }
+
+        const hasAmazon = supp.links.amazon !== null;
+        const hasFlipkart = supp.links.flipkart !== null;
+        let saleTag = '🔥 BBD Steal';
+        if (hasAmazon && hasFlipkart) saleTag = '🔥 BBD & GIF Sale';
+        else if (hasAmazon) saleTag = '🎉 Great Indian Festival';
+        else if (hasFlipkart) saleTag = '🔥 BBD Sale';
+
+        let storeButtons = '';
+        const btnStyle = "text-align:center; padding:0.6rem; border-radius:6px; font-weight:bold; color:white; text-decoration:none;";
+        if (hasAmazon && hasFlipkart) {
+          storeButtons = `
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <a href="${supp.links.amazon}" style="${btnStyle} background:#ff9900;" target="_blank">Amazon Price</a>
+              <a href="${supp.links.flipkart}" style="${btnStyle} background:#047bd5;" target="_blank">Flipkart Price</a>
+            </div>`;
+        } else if (hasAmazon) {
+          storeButtons = `<a href="${supp.links.amazon}" style="${btnStyle} background:#ff9900; display:block;" target="_blank">Amazon Price</a>`;
+        } else if (hasFlipkart) {
+          storeButtons = `<a href="${supp.links.flipkart}" style="${btnStyle} background:#047bd5; display:block;" target="_blank">Flipkart Price</a>`;
+        }
+
+        return `
+          <article style="background:white; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.08); overflow:hidden; position:relative;">
+            <div class="image-container" style="position:relative; aspect-ratio:4/5; overflow:hidden; background:#f9f9f9;" onmouseover="this.children[1].style.opacity=1" onmouseout="this.children[1].style.opacity=0">
+              <!-- Static Image (Always visible in background) -->
+              <img src="${supp.imageStatic}" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;" loading="lazy">
+              <!-- GIF (Hidden by default, fades in on hover) -->
+              <img src="${supp.imageGif}" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; opacity:0; transition:opacity 0.4s ease;" loading="lazy">
+            </div>
+            ${trustBadge}
+            <div style="position:absolute; top:10px; left:10px; background:#E22427; color:white; padding:4px 8px; border-radius:4px; font-weight:bold; font-size:0.8rem; z-index:10;">${saleTag}</div>
+            
+            <div style="padding:1.5rem;">
+              <h3 style="font-size:1.1rem; margin-bottom:0.5rem; color:#333;">${supp.name}</h3>
+              <p style="font-size:0.9rem; color:#666; margin-bottom:1rem; min-height:40px;">${supp.description}</p>
+              
+              <div style="text-align:center; margin-bottom:1rem;">
+                <span style="background:#f1f3f4; color:#333; padding:6px 12px; border-radius:20px; font-weight:bold; font-size:0.9rem;">Check Live Price</span>
+              </div>
+              
+              <div style="background:#f8f9fa; border:1px solid #e9ecef; border-radius:8px; padding:10px; margin-bottom:1rem; text-align:center;">
+                <p style="font-size:0.8rem; font-weight:bold; color:#555; margin-bottom:8px;">Get additional discount using gift cards!</p>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                  <a href="${naviLink}" style="background:#e0f2fe; color:#0369a1; padding:6px; border-radius:4px; font-size:0.75rem; font-weight:bold; text-decoration:none;" target="_blank">Navi (1.6%)</a>
+                  <a href="${bhimLink}" style="background:#e0f2fe; color:#0369a1; padding:6px; border-radius:4px; font-size:0.75rem; font-weight:bold; text-decoration:none;" target="_blank">BHIM (1.5%)</a>
+                </div>
+              </div>
+              ${storeButtons}
+            </div>
+          </article>
+        `;
+      }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', renderSupplements);
+  </script>
+</body>
+</html>

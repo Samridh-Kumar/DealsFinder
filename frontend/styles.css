@@ -8,6 +8,10 @@
     --text-color: #333333; /* Dark Gray for text */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -125,38 +129,46 @@ body {
 }
 
 .tile {
-    width: auto; /* Smaller width */
-    height: 600px; /* Smaller height */
-    object-fit: contain ;
-    position: relative;
+    aspect-ratio: 4/3;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     overflow: hidden;
-    border-radius: 8px; /* Slightly smaller border radius */
-    border: 2px solid var(--primary-color);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.4s ease;
 }
 
 .tile:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.tile a {
+    display: block;
+    position: relative; /* This keeps the text from floating away */
+    height: 100%;
+    width: 100%;
 }
 
 .tile-image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    width: 100%; /* Full width of tile */
-    height: 92%;
-    border-bottom: 2px solid var(--primary-color);
+    border: none;
 }
 
 .tile h3 {
-    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 2.5rem 1rem 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
     color: white;
-    text-align: center;
-    padding: 0.5rem 0;
-    font-size: 1rem;
     text-transform: uppercase;
+    font-size: 1.2rem;
+    z-index: 2;
 }
-
 /* Deals Section */
 .deals-container {
     padding: 3rem 2rem;
@@ -313,4 +325,339 @@ footer {
     .filter-select {
         width: 100%;
     }
+}
+
+/* ========================================
+   HEALTH SUPPLEMENTS — Supplement Cards
+   ======================================== */
+
+.supplements-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.section-header p {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.supplements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Base Supplement Card */
+.supplement-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.supplement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Image Container with GIF Swap */
+.supplement-card .image-container {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.supplement-card .static-image,
+.supplement-card .animated-gif {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.supplement-card .static-image {
+  opacity: 1;
+  z-index: 1;
+}
+
+.supplement-card .animated-gif {
+  opacity: 0;
+  z-index: 2;
+}
+
+.supplement-card:hover .static-image {
+  opacity: 0;
+}
+
+.supplement-card:hover .animated-gif {
+  opacity: 1;
+}
+
+/* Trustified Badge - Top Right */
+.supplement-card .trust-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #059669; /* Emerald green */
+  color: white;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 6px rgba(5, 150, 105, 0.3);
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.supplement-card .trust-badge.trustified {
+  background: #10b981; /* Green-500 */
+  background: #059669; /* Emerald */
+}
+
+/* Brand Tested Badge - Top Right */
+.supplement-card .trust-badge.brand-tested {
+  background: #3b82f6; /* Blue-500 */
+  color: white;
+}
+
+/* BBD Steal Tag - Top Left */
+.supplement-card .deal-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #ef4444; /* Red */
+  color: white;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 6px rgba(239, 68, 68, 0.3);
+  z-index: 10;
+  white-space: nowrap;
+}
+
+/* Supplement Content */
+.supplement-card .supplement-content {
+  padding: 1.25rem;
+}
+
+.supplement-card .supplement-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.supplement-card .supplement-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+/* Price Section */
+.supplement-card .price-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.supplement-card .live-price-badge {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 2px 6px rgba(52, 62, 180, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.supplement-card .live-price-badge:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(52, 62, 180, 0.4);
+}
+
+/* Referral Box */
+.supplement-card .referral-box {
+  background: #eff6ff; /* Blue 50 */
+  border: 1px solid #bfdbfe; /* Blue 200 */
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.supplement-card .referral-box p {
+  font-size: 0.85rem;
+  color: #1e40af; /* Blue 800 */
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+.supplement-card .referral-box strong {
+  color: #1e3a8a; /* Blue 900 */
+}
+
+.supplement-card .referral-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.supplement-card .referral-btn {
+  flex: 0 0 auto;
+  text-align: center;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.supplement-card .navi-btn {
+  background: #0ea5e9; /* Sky 500 */
+  color: white;
+}
+
+.supplement-card .navi-btn:hover {
+  background: #0284c7; /* Sky 600 */
+}
+
+.supplement-card .bhim-btn {
+  background: #22c55e; /* Green 500 */
+  color: white;
+}
+
+.supplement-card .bhim-btn:hover {
+  background: #16a34a; /* Green 600 */
+}
+
+/* Primary Store Buttons */
+.supplement-card .store-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 0.75rem;
+}
+
+.supplement-card .store-btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+}
+
+.supplement-card .store-btn.amazon-btn {
+  background: #ff9900; /* Amazon orange */
+  color: white;
+}
+
+.supplement-card .store-btn.amazon-btn:hover {
+  background: #e65c00;
+  transform: translateY(-1px);
+}
+
+.supplement-card .store-btn.flipkart-btn {
+  background: #007c58; /* Flipkart green */
+  color: white;
+}
+
+.supplement-card .store-btn.flipkart-btn:hover {
+  background: #055a42;
+  transform: translateY(-1px);
+}
+
+/* Single full-width store button */
+.supplement-card .store-btn.single {
+  width: 100%;
+  background: var(--primary-color);
+  color: white;
+}
+
+.supplement-card .store-btn.single:hover {
+  background: var(--accent-color);
+}
+
+/* Main Buy Button */
+.supplement-card .buy-button {
+  display: block;
+  width: 100%;
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.supplement-card .buy-button:hover {
+  background: var(--accent-color);
+}
+
+.supplement-card .buy-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive adjustments for supplement cards */
+@media (max-width: 768px) {
+  .supplements-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .supplement-card .supplement-title {
+    font-size: 1rem;
+  }
+
+  .supplement-card .sale-price {
+    font-size: 1.25rem;
+  }
+
+  .supplement-card .referral-buttons {
+    flex-direction: column;
+  }
+
+  .supplement-card .store-buttons {
+    grid-template-columns: 1fr;
+  }
 }

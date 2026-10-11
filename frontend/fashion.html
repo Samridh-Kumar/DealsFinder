@@ -1,182 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the best fashion deals on DealsFinder - Save on clothing, shoes, accessories and more">
-    <meta name="keywords" content="fashion deals, clothing sale, discount shoes, accessories, online shopping deals">
-    <title>Fashion Deals - DealsFinder | Save on Clothing, Shoes & Accessories</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="Fashion_Styles.css">
-    <link rel="canonical" href="https://dealsfinder.com/fashion.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover curated fashion deals on DealsFinder, featuring Old Money Style, Streetwear, Minimalist Basics, Athleisure, and Y2K trendy styles.">
+  <meta name="keywords" content="fashion deals, old money style deals, streetwear deals, minimalist basics fashion, athleisure deals, Y2K fashion deals, affiliate deals">
+  <meta name="author" content="DealsFinder">
+  <title>Fashion Deals - DealsFinder</title>
+  <link rel="stylesheet" href="Fashion_Styles.css">
+  <style>
+    /* Inline styles for custom category sections */
+
+    /* Old Money Section */
+    #old-money {
+      background: #fff;
+      color: #111;
+      font-family: "Georgia", serif;
+      text-align: center;
+      padding: 4rem 2rem;
+      letter-spacing: 0.03em;
+    }
+    #old-money h2 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+    #old-money p {
+      font-size: 1.25rem;
+      margin-bottom: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+    }
+    #old-money .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    #old-money .deal-card {
+      background: #fff;
+      border: 1px solid #e7e7e7;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: "Georgia", serif;
+    }
+    #old-money .deal-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    }
+    #old-money .deal-image-container img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      height: 320px;
+      object-fit: cover;
+    }
+    #old-money .deal-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: #111;
+    }
+    #old-money .Price {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    #old-money .original-price {
+      text-decoration: line-through;
+      color: #a3a3a3;
+      margin-right: 0.75rem;
+    }
+    #old-money .discounted-price {
+      color: #111;
+      font-weight: 600;
+    }
+    #old-money .view-deal-btn {
+      background: #333;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 600;
+      font-family: "Georgia", serif;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+    #old-money .view-deal-btn:hover {
+      background: #555;
+    }
+
+    /* Streetwear Section */
+    #streetwear {
+      background: #1a1a1a;
+      color: #eee;
+      font-family: "Impact", "Arial Black", sans-serif;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    #streetwear h2 {
+      font-size: 2.75rem;
+      color: #f0f0f0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+    #streetwear p {
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #bbb;
+      font-weight: 700;
+      text-shadow: 0 0 3px #000;
+    }
+    #streetwear .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    #streetwear .deal-card {
+      background: #222;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255,255,255,0.12);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      color: #eee;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    #streetwear .deal-card:hover {
+      box-shadow: 0 0 20px #ff3c00, 0 0 30px #ff6100;
+      transform: translateY(-5px);
+    }
+    #streetwear .deal-image-container {
+      position: relative;
+      width: 100%;
+      height: 320px;
+    }
+    #streetwear .deal-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #streetwear .discount-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #ff3c00;
+      color: white;
+      font-weight: 900;
+      padding: 0.3rem 0.7rem;
+      font-size: 1rem;
+      border-radius: 3px;
+      text-transform: uppercase;
+      box-shadow: 0 0 8px #ff3c00;
+    }
+    #streetwear h3 {
+      padding: 1rem 1.2rem 0.2rem 1.2rem;
+      font-size: 1.3rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    #streetwear .price-container {
+      padding: 0 1.2rem 1rem 1.2rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ddd;
+    }
+    #streetwear .original-price {
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+    #streetwear .discounted-price {
+      color: #ff3c00;
+      font-weight: bold;
+    }
+    #streetwear .view-deal-btn {
+      display: block;
+      margin: 0 1.2rem 1.5rem 1.2rem;
+      background: #ff3c00;
+      color: white;
+      text-align: center;
+      padding: 0.7rem;
+      border-radius: 4px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    #streetwear .view-deal-btn:hover {
+      background: #ff5e28;
+    }
+
+    /* Generic Deal Sections - Minimalist style for others */
+    .deals-category {
+      background: #fff;
+      color: #222;
+      font-family: Arial, sans-serif;
+      padding: 3rem 2rem;
+      margin-top: 3rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 8px;
+      box-shadow: 0 1px 7px rgba(0,0,0,0.05);
+    }
+    .deals-category h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      color: #222;
+    }
+    .deals-category p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #555;
+      max-width: 750px;
+    }
+    .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+    }
+
+    /* Generic Deal Card Style for Minimalist sections */
+    .deal-card {
+      background: #fefefe;
+      border-radius: 6px;
+      box-shadow: 0 0 7px rgba(0,0,0,0.08);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+    .deal-card:hover {
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+    .deal-image-container {
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+      height: 280px;
+      margin-bottom: 1rem;
+    }
+    .deal-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .discount-badge {
+      position: absolute;
+      background-color: crimson;
+      color: white;
+      font-weight: bold;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      font-size: 0.9rem;
+      top: 8px;
+      left: 8px;
+      box-shadow: 0 0 6px crimson;
+    }
+    h3 {
+      margin: 0.4rem 0 0.8rem 0;
+      font-size: 1.2rem;
+      color: #222;
+      flex-grow: 1;
+    }
+    .price-container {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .original-price {
+      text-decoration: line-through;
+      color: #888;
+    }
+    .discounted-price {
+      font-weight: 700;
+      color: #333;
+    }
+    .view-deal-btn {
+      background-color: #2a7ae2;
+      color: white;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .view-deal-btn:hover {
+      background-color: #1d5fcc;
+    }
+
+  </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="index.html" class="logo">
-                <i class="fas fa-tags"></i> DealsFinder
-            </a>
-            <nav class="nav-links">
-                <a href="fashion.html" class="nav-link active" aria-current="page"><i class="fas fa-tshirt"></i> Fashion</a>
-                <a href="health.html" class="nav-link"><i class="fas fa-heartbeat"></i> Health</a>
-                <a href="#" class="nav-link"><i class="fas fa-star"></i> Top Deals</a>
-            </nav>
-        </div>
-    </header>
 
-    <section class="hero fashion-hero">
-        <div class="hero-content">
-            <h1>Fashion Deals</h1>
-            <p>Find exclusive offers on top fashion products and brands.</p>
-            <a href="#deals-section" class="cta-button">Browse Deals</a>
+  <!-- Header (assumed existing in your current project) -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fashion.html" aria-current="page">Fashion</a></li>
+        <li><a href="health.html">Health</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="text-align:center; padding: 4rem 1rem; background-color: #faf8f5; font-family: 'Georgia', serif;">
+    <h1 style="font-size: 3rem; margin-bottom: 0.5rem;">Fashion Deals & Style Finds</h1>
+    <p style="font-size: 1.3rem; color: #555; max-width: 700px; margin-left: auto; margin-right: auto;">Curated collections of the finest deals on classic and trendy fashion aesthetics, brought to you by DealsFinder.</p>
+  </section>
+
+  <main class="main-content">
+
+    <!-- Old Money Style Section -->
+    <section id="old-money">
+      <h2>Old Money Style Deals</h2>
+      <p>Discover timeless luxury with our selection of blazers, polo shirts, linen trousers, loafers, and sweaters that embody elegant old money fashion.</p>
+      <div class="deals-grid">
+
+        <div class="deal-card">
+          <div class="deal-image-container" style="position: relative;">
+            <img src="https://m.media-amazon.com/images/I/71qK5cF8rNL._AC_UY741_.jpg" alt="Classic Navy Blazer" loading="lazy">
+            <div class="discount-badge">35% OFF</div>
+          </div>
+          <h3>Men's Classic Navy Blazer - Tailored Fit</h3>
+          <div class="price-container">
+            <span class="original-price">₹4,999</span>
+            <span class="discounted-price">₹3,249</span>
+          </div>
+          <a href="https://www.amazon.in/dp/B08N5WRPST?tag=dealsfinder-21" class="view-deal-btn" target="_blank" rel="nofollow">View Deal</a>
         </div>
+
+        <div class="deal-card">
+          <div class="deal-image-container" style="position: relative;">
+            <img src="https://m.media-amazon.com/images/I/61dXr7LJFEL._AC_UY741_.jpg" alt="Linen Dress Trousers" loading="lazy">
+            <div class="discount-badge">40% OFF</div>
+          </div>
+          <h3>Premium Linen Dress Trousers - Beige</h3>
+          <div class="price-container">
+            <span class="original-price">₹2,899</span>
+            <span class="discounted-price">₹1,739</span>
+          </div>
+          <a href="https://www.amazon.in/dp/B09KMDX6RF?tag=dealsfinder-21" class="view-deal-btn" target="_blank" rel="nofollow">View Deal</a>
+        </div>
+
+        <div class="deal-card">
+          <div class="deal-image-container" style="position: relative;">
+            <img src="https://m.media-amazon.com/images/I/71xvZQDGFZL._AC_UY741_.jpg" alt="Classic White Polo Shirt" loading="lazy">
+            <div class="discount-badge">30% OFF</div>
+          </div>
+          <h3>Classic Cotton Polo Shirt - White</h3>
+          <div class="price-container">
+            <span class="original-price">₹1,599</span>
+            <span class="discounted-price">₹1,119</span>
+          </div>
+          <a href="https://www.amazon.in/dp/B07XQBNM48?tag=dealsfinder-21" class="view-deal-btn" target="_blank" rel="nofollow">View Deal</a>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Hot Deals Carousel -->
-    <section class="hot-deals-section">
-        <div class="section-header">
-            <h2><i class="fas fa-fire"></i> Hot Fashion Deals</h2>
-            <p>Limited-time offers you don't want to miss!</p>
+    <!-- Streetwear Section -->
+    <section id="streetwear">
+      <h2>Streetwear Deals</h2>
+      <p>Explore bold urban fashion with oversized hoodies, graphic tees, cargo pants, and statement sneakers that define streetwear culture.</p>
+      <div class="deals-grid">
+
+        <div class="deal-card">
+          <div class="deal-image-container" style="position: relative;">
+            <img src="https://m.media-amazon.com/images/I/71t8BrApUsL._AC_UY741_.jpg" alt="Oversized Hoodie in Black" loading="lazy">
+            <div class="discount-badge">25% OFF</div>
+          </div>
+          <h3>Oversized Black Hoodie - Urban Streetwear</h3>
+          <div class="price-container">
+            <span class="original-price">₹3,499</span>
+            <span class="discounted-price">₹2,624</span>
+          </div>
+          <a href="https://www.amazon.in/dp/B07F5TJTRW?tag=dealsfinder-21" class="view-deal-btn" target="_blank" rel="nofollow">View Deal</a>
         </div>
-        <div id="hot-deals-container" class="hot-deals-container">
-            <!-- Hot deals will be populated by JavaScript -->
-            <div class="skeleton-loader hot-deal-skeleton"></div>
-            <div class="skeleton-loader hot-deal-skeleton"></div>
-            <div class="skeleton-loader hot-deal-skeleton"></div>
+
+        <div class="deal-card">
+          <div class="deal-image-container" style="position: relative;">
+            <img src="https://m.media-amazon.com/images/I/71iMxf0MxYL._AC_UY741_.jpg" alt="Graphic Tee White" loading="lazy">
+            <div class="discount-badge">30% OFF</div>
+          </div>
+          <h3>Graphic Tee White - Bold Prints</h3>
+          <div class="price-container">
+            <span class="original-price">₹1,299</span>
+            <span class="discounted-price">₹909</span>
+          </div>
+          <a href="https://www.amazon.in/dp/B089QFGWSW?tag=dealsfinder-21" class="view-deal-btn" target="_blank" rel="nofollow">View Deal</a>
         </div>
+
+        <div class="deal-card">
+          <div class="deal-image-container" style="position: relative;">
+            <img src="https://m.media-amazon.com/images/I/61p1QlAahKL._AC_UY741_.jpg" alt="Cargo Pants Olive" loading="lazy">
+            <div class="discount-badge">20% OFF</div>
+          </div>
+          <h3>Cargo Pants Olive - Street Style Essential</h3>
+          <div class="price-container">
+            <span class="original-price">₹2,099</span>
+            <span class="discounted-price">₹1,679</span>
+          </div>
+          <a href="https://www.amazon.in/dp/B07D5D7ZP7?tag=dealsfinder-21" class="view-deal-btn" target="_blank" rel="nofollow">View Deal</a>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Main Deals Section -->
-    <main class="deals-container" id="deals-section">
-        <div class="section-header">
-            <h2>All Fashion Deals</h2>
-            <p id="results-count">Showing all deals</p>
-        </div>
+    <!-- Minimalist Basics Section -->
+    <section class="deals-category">
+      <h2>Minimalist Basics Deals - Timeless Wardrobe Staples</h2>
+      <p>Shop essential neutral tees, slim-fit jeans, and plain shirts perfect for building a clean and versatile wardrobe.</p>
+      <div class="deals-grid">
+        <!-- Placeholder for Minimalist product cards -->
+      </div>
+    </section>
 
-        <!-- Filters Section -->
-        <section class="filters-section">
-            <div class="filters-container">
-                <div class="filter-group">
-                    <label for="category-filter">Category</label>
-                    <select id="category-filter" class="filter-select" aria-label="Filter by category">
-                        <option value="all">All Categories</option>
-                        <option value="clothing">Clothing</option>
-                        <option value="shoes">Shoes</option>
-                        <option value="accessories">Accessories</option>
-                        <option value="activewear">Activewear</option>
-                        <option value="outerwear">Outerwear</option>
-                    </select>
-                </div>
+    <!-- Athleisure Section -->
+    <section class="deals-category">
+      <h2>Athleisure Deals - Stylish Comfort for Every Day</h2>
+      <p>Find deals on joggers, gym hoodies, performance activewear, and trendy sneakers combining style and comfort seamlessly.</p>
+      <div class="deals-grid">
+        <!-- Placeholder for Athleisure product cards -->
+      </div>
+    </section>
 
-                <div class="filter-group">
-                    <label for="gender-filter">For Who</label>
-                    <select id="gender-filter" class="filter-select" aria-label="Filter by gender">
-                        <option value="all">Everyone</option>
-                        <option value="women">Women</option>
-                        <option value="men">Men</option>
-                        <option value="kids">Kids</option>
-                        <option value="unisex">Unisex</option>
-                    </select>
-                </div>
+    <!-- Y2K Section -->
+    <section class="deals-category">
+      <h2>Y2K & Trendy Deals - Bold Fashion Comeback</h2>
+      <p>Discover the latest Y2K-inspired fashion deals on baggy jeans, crop tops, statement jackets, and accessories that captivate Gen-Z trends.</p>
+      <div class="deals-grid">
+        <!-- Placeholder for Y2K product cards -->
+      </div>
+    </section>
 
-                <div class="filter-group">
-                    <label for="price-range">Price Range</label>
-                    <select id="price-range" class="filter-select" aria-label="Filter by price range">
-                        <option value="all">All Prices</option>
-                        <option value="under-50">Under $50</option>
-                        <option value="50-100">$50 - $100</option>
-                        <option value="100-200">$100 - $200</option>
-                        <option value="over-200">Over $200</option>
-                    </select>
-                </div>
+  </main>
 
-                <div class="filter-group">
-                    <label for="deal-type">Deal Type</label>
-                    <select id="deal-type" class="filter-select" aria-label="Filter by deal type">
-                        <option value="all">All Deals</option>
-                        <option value="flash">Flash Sales</option>
-                        <option value="clearance">Clearance</option>
-                        <option value="seasonal">Seasonal</option>
-                        <option value="premium">Premium</option>
-                    </select>
-                </div>
+  <!-- Footer (assumed existing in your current project) -->
+  <footer>
+    <p>&copy; 2025 DealsFinder. All rights reserved.</p>
+  </footer>
 
-                <div class="filter-group">
-                    <label for="sort-filter">Sort By</label>
-                    <select id="sort-filter" class="filter-select" aria-label="Sort results">
-                        <option value="newest">Newest</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="discount">Highest Discount</option>
-                        <option value="rating">Highest Rated</option>
-                    </select>
-                </div>
-            </div>
-        </section>
-
-        <!-- Loading indicator -->
-        <div id="loading-indicator" class="loading-indicator">
-            <div class="spinner"></div>
-            <p>Finding the best deals for you...</p>
-        </div>
-
-        <!-- Deals Grid -->
-        <div id="deals-grid" class="deals-grid">
-            <!-- Skeleton loaders while content loads -->
-            <div class="skeleton-loader deal-card-skeleton"></div>
-            <div class="skeleton-loader deal-card-skeleton"></div>
-            <div class="skeleton-loader deal-card-skeleton"></div>
-            <div class="skeleton-loader deal-card-skeleton"></div>
-            <div class="skeleton-loader deal-card-skeleton"></div>
-            <div class="skeleton-loader deal-card-skeleton"></div>
-            <div class="skeleton-loader deal-card-skeleton"></div>
-            <div class="skeleton-loader deal-card-skeleton"></div>
-        </div>
-        
-        <!-- Newsletter Sign-up -->
-        <section class="newsletter-section">
-            <div class="newsletter-container">
-                <div class="newsletter-content">
-                    <h3><i class="fas fa-envelope"></i> Get Notified About New Deals</h3>
-                    <p>Subscribe to our newsletter and never miss out on exclusive fashion deals!</p>
-                    <form class="newsletter-form" id="newsletter-form">
-                        <input type="email" placeholder="Your email address" required aria-label="Email address">
-                        <button type="submit" class="newsletter-button">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About DealsFinder</h3>
-                <p>Your go-to platform for the latest and greatest deals on fashion and health products.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Follow Us</h3>
-                <ul class="social-links">
-                    <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i> Facebook</a></li>
-                    <li><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i> Twitter</a></li>
-                    <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 DealsFinder. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="fashion-deals.js"></script>
 </body>
 </html>
